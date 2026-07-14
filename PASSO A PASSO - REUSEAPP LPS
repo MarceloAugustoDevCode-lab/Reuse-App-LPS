@@ -30,7 +30,6 @@ Mostre as telas:
 - Feedback
 
 5. Coletar feedback
-Chame 3 a 5 pessoas para verem o protótipo.
 Na tela Feedback, registre nome ou identificação, resposta e comentário.
 O sistema salva automaticamente:
 - feedbacks_lps.csv
@@ -41,5 +40,3 @@ Na tela Feedback, clique em Exportar Relatório.
 O sistema vai gerar:
 - relatorio_lps.txt
 
-7. Usar no trabalho da Estácio
-Use os prints do sistema, os arquivos de feedback e o relatório como evidências da atividade realizada.
