@@ -1,0 +1,20 @@
+FEATURE MODEL - REUSEAPP
+
+ReuseApp
+├── Home [Obrigatório]
+├── Login [Obrigatório]
+├── Cadastro [Obrigatório]
+├── Produtos/Serviços [Obrigatório]
+├── Pedidos/Solicitações [Obrigatório]
+├── Sobre LPS [Obrigatório]
+├── Feedback [Opcional]
+└── Variação do negócio [XOR]
+    ├── Lanchonete
+    ├── Loja de Roupas
+    ├── Barbearia
+    └── Assistência Técnica
+
+Explicação:
+- As telas Home, Login, Cadastro, Produtos/Serviços, Pedidos/Solicitações e Sobre LPS são obrigatórias porque fazem parte da base comum do produto.
+- A tela Feedback é opcional, mas foi incluída para coletar evidências da participação da comunidade.
+- A variação do negócio é XOR porque o usuário escolhe uma variação por vez: Lanchonete, Loja de Roupas, Barbearia ou Assistência Técnica.
