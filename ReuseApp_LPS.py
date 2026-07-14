@@ -12,7 +12,32 @@ from tkinter import messagebox
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-BASE_DIR = Path(__file__).resolve().parent
+def obter_pasta_documentos():
+    """Retorna a pasta Documentos do usuário no Windows/OneDrive.
+    Se não encontrar, cria uma pasta Documents dentro da pasta do usuário.
+    """
+    usuario = Path.home()
+
+    candidatos = [
+        usuario / "OneDrive" / "Documentos",
+        usuario / "OneDrive" / "Documents",
+        usuario / "Documentos",
+        usuario / "Documents",
+    ]
+
+    for pasta in candidatos:
+        if pasta.exists():
+            return pasta
+
+    pasta_padrao = usuario / "Documents"
+    pasta_padrao.mkdir(parents=True, exist_ok=True)
+    return pasta_padrao
+
+
+# Todos os arquivos gerados pelo sistema serão salvos em Documentos/ReuseApp_LPS
+BASE_DIR = obter_pasta_documentos() / "ReuseApp_LPS"
+BASE_DIR.mkdir(parents=True, exist_ok=True)
+
 ARQUIVO_FEEDBACK_CSV = BASE_DIR / "feedbacks_lps.csv"
 ARQUIVO_FEEDBACK_TXT = BASE_DIR / "feedbacks_lps.txt"
 ARQUIVO_RELATORIO_TXT = BASE_DIR / "relatorio_lps.txt"
@@ -802,7 +827,7 @@ class ReuseAppLPS(ctk.CTk):
 
         messagebox.showinfo(
             "Feedback",
-            f"Feedback salvo com sucesso.\n\nArquivos gerados:\n{ARQUIVO_FEEDBACK_CSV.name}\n{ARQUIVO_FEEDBACK_TXT.name}"
+            f"Feedback salvo com sucesso.\n\nArquivos gerados em:\n{BASE_DIR}\n\n{ARQUIVO_FEEDBACK_CSV.name}\n{ARQUIVO_FEEDBACK_TXT.name}"
         )
         self.input_participante.delete(0, "end")
         self.input_comentario.delete(0, "end")
@@ -895,3 +920,4 @@ A atividade demonstra que componentes como Header, AppButton, AppInput e Product
 if __name__ == "__main__":
     app = ReuseAppLPS()
     app.mainloop()
+
