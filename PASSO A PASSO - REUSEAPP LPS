@@ -1,0 +1,45 @@
+PASSO A PASSO - REUSEAPP LPS
+
+1. Instalar a biblioteca
+Abra o terminal ou o Thonny e execute:
+
+pip install customtkinter
+
+2. Rodar o sistema
+Salve o arquivo ReuseApp_LPS.py e execute:
+
+python ReuseApp_LPS.py
+
+3. Testar as variações
+No menu lateral, escolha:
+- Lanchonete
+- Loja de Roupas
+- Barbearia
+- Assistência Técnica
+
+Observe que o mesmo sistema muda o nome, a cor, os produtos, os serviços, os pedidos e as formas de pagamento.
+
+4. Usar o app na apresentação
+Mostre as telas:
+- Home
+- Login
+- Cadastro
+- Produtos/Serviços
+- Pedidos/Solicitações
+- Sobre LPS
+- Feedback
+
+5. Coletar feedback
+Chame 3 a 5 pessoas para verem o protótipo.
+Na tela Feedback, registre nome ou identificação, resposta e comentário.
+O sistema salva automaticamente:
+- feedbacks_lps.csv
+- feedbacks_lps.txt
+
+6. Exportar relatório
+Na tela Feedback, clique em Exportar Relatório.
+O sistema vai gerar:
+- relatorio_lps.txt
+
+7. Usar no trabalho da Estácio
+Use os prints do sistema, os arquivos de feedback e o relatório como evidências da atividade realizada.
